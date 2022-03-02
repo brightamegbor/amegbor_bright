@@ -1,8 +1,8 @@
 function currencyCoverter(priceInGHS) {
-    const usdGHS = 6.05;
-    const usdCNY = 6.46;
-    const usdCAD = 1.26;
-    const usdGBP = 0.73;
+    const usdGHS = 6.05; // ghs rate
+    const usdCNY = 6.46; // cny rate
+    const usdCAD = 1.26; // cad rate
+    const usdGBP = 0.73; // gbp rate
 
     // get total dollars from cedis
     let totalUSD = priceInGHS / usdGHS;
