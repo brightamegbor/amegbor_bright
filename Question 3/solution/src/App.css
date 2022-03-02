@@ -1,0 +1,87 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.user-avatar {
+  position: absolute;
+  top: 2rem;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.check {
+  margin-top: 1.2rem;
+}
+
+.cardImage {
+  /* The image used */
+  /* background-image: url("./assets/images/man_face.jpg"); */
+
+  /* Add the blur effect */
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+
+  /* Full height */
+  /* height: 220px; */
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.blurContainer {
+  position:relative;
+  /* width:300px; */
+  height:218px;
+  overflow:hidden;
+}
+
+.card {
+  max-width: 300px !important;
+}
+
+@media only screen and (max-width: 280px) {
+  .card {
+    max-width: 280px !important;
+  }
+}
