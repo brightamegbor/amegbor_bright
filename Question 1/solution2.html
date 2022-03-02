@@ -1,8 +1,26 @@
-// This is direct function implementation in javascript
-// to run the function you need to have node installed
-// run node solution1.js in terminal to run the function
-// if you do not have node, or you prefer running in a browser
-// go to the second solution "solution2" instead
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution 2</title>
+</head>
+<body>
+    <div>
+        <p>
+            Enter number to convert to words
+        </p>
+    <input type="number" id="number" onkeyup="convertToWord();" />
+    <br/>
+    <p></p>
+    <div id="convertedResult">Type number above</div>
+  </div>
+    
+
+    <script>// This is second solution
+// Run in a browser
+// By opening the solution2 in a web browser
 
 //convert 1 to 999 - numbers to words
 function convertThreeDigits(number) {
@@ -87,9 +105,9 @@ function convertThreeDigits(number) {
 }
 
 //convertToWord function
-function convertToWord(number) {
+function convertToWord() {
     let convertedNumber = '';
-    let numberString = number.toString();
+    let numberString = document.getElementById('number').value;
     let finalConvertedNumber = new Array();
 
     const bigNumberArray = new Array(
@@ -103,11 +121,12 @@ function convertToWord(number) {
     );
 
     if (numberString == '0') {
-        return 'Zero';
+        document.getElementById('convertedResult').innerHTML = 'Zero';
     }
 
     if (numberString == 0) {
-        return 'Enter only valid numbers';
+         document.getElementById('convertedResult').innerHTML = 'Enter only valid numbers';
+        return;
     }
 
     let index = numberString.length - 1;
@@ -162,7 +181,7 @@ function convertToWord(number) {
             convertedNumber += ' ' + finalConvertedNumber[n].trim();
         }
     }
-
+    
     // remove any redundant and at the end
     let numberarry = convertedNumber.trim().split(' ');
     const reverse = numberarry.reverse();
@@ -172,13 +191,16 @@ function convertToWord(number) {
         convertedNumber = numberarry.join(' ');
     }
 
+
     // convert to sentense case string
     convertedNumber =
         convertedNumber.trim().toLowerCase().substring(0, 1).toUpperCase() +
         convertedNumber.trim().toLowerCase().substring(1);
 
-    return convertedNumber; //return convertedNumber
+    document.getElementById('convertedResult').innerHTML = convertedNumber; //return convertedNumber
 }
 
-const words = convertToWord(1011); // pass the number you want to convert here
-console.log(words);
+
+</script>
+</body>
+</html>
